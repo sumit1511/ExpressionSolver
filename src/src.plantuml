@@ -3,70 +3,70 @@
 title __SRC's Class Diagram__\n
 
   namespace  {
-    class ExpressionTree.CreateExpressionTree {
+    class CreateExpressionTree {
         ~ Expression : String
-        ~ ExpressionNodeList : List<ExpressionTree.ExpressionNode>
-        ~ OperandStack : Stack<ExpressionTree.ExpressionNode>
-        ~ OperatorStack : Stack<ExpressionTree.ExpressionNode>
+        ~ ExpressionNodeList : List<ExpressionNode>
+        ~ OperandStack : Stack<ExpressionNode>
+        ~ OperatorStack : Stack<ExpressionNode>
         + treeExpression()
-        ~ ExpressionTree.CreateExpressionTree()
+        ~ CreateExpressionTree()
     }
   }
   
 
   namespace  {
-    class Expression.ExpressionMain {
+    class ExpressionMain {
         {static} + main()
     }
   }
   
 
   namespace  {
-    class ExpressionTree.ExpressionNode {
-        ~ Operater.Precedence : int
+    class ExpressionNode {
+        ~ Precedence : int
         ~ isOperator : boolean
         ~ type : String
         ~ value : String
-        ~ ExpressionTree.ExpressionNode()
-        ~ Operater.Operator()
+        ~ ExpressionNode()
+        ~ Operator()
         ~ typeOfOperator()
     }
   }
   
 
   namespace  {
-    class Expression.ExpressionParse {
+    class ExpressionParse {
         ~ Expression : String
         + ParsedList()
-        ~ Expression.ExpressionParse()
+        ~ ExpressionParse()
     }
   }
   
 
   namespace  {
-    class Expression.ExpressionSolution {
+    class ExpressionSolution {
     }
   }
   
 
   namespace  {
-    class Validater.ExpressionTreeValidation {
+    class ExpressionTreeValidation {
         + ExpressionValidator()
-        ~ Validater.ExpressionTreeValidation()
+        ~ ExpressionTreeValidation()
     }
   }
   
 
   namespace  {
-    class Operater.Operator {
-        ~ Operater.Operator : String[]
+    class Operator {
+        ~ Operator : String[]
         + isOperator()
     }
   }
   
 
   namespace  {
-    class Operater.Precedence {
+    class Precedence {
         ~ precedenceList : Map<String, Integer>
         + isValidToken()
         + setPrecedence()
@@ -75,29 +75,29 @@ title __SRC's Class Diagram__\n
   
 
   namespace  {
-    class Operater.SineOperands {
-        ~ ExpressionNodeList : List<ExpressionTree.ExpressionNode>
+    class SineOperands {
+        ~ ExpressionNodeList : List<ExpressionNode>
         + updateList()
-        ~ Operater.SineOperands()
+        ~ SineOperands()
     }
   }
   
 
   namespace  {
-    class ExpressionTree.Tokenizer {
-        ~ ExpressionNodeList : List<ExpressionTree.ExpressionNode>
+    class Tokenizer {
+        ~ ExpressionNodeList : List<ExpressionNode>
         - Expression : String
         + CreateExpressionNodeList()
-        ~ ExpressionTree.Tokenizer()
+        ~ Tokenizer()
         ~ newNode()
     }
   }
   
 
-  ExpressionTree.ExpressionNode o-- ExpressionTree.ExpressionNode : left
-  ExpressionTree.ExpressionNode o-- ExpressionTree.ExpressionNode : right
-  Validater.ExpressionTreeValidation o-- ExpressionTree.ExpressionNode : ExpressionRoot
-  ExpressionTree.Tokenizer o-- Operater.Precedence : precedence
+  ExpressionNode o-- ExpressionNode : left
+  ExpressionNode o-- ExpressionNode : right
+  ExpressionTreeValidation o-- ExpressionNode : ExpressionRoot
+  Tokenizer o-- Precedence : precedence
 
 
 right footer

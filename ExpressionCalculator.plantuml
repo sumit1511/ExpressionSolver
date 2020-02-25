@@ -3,69 +3,69 @@
 title __EXPRESSIONCALCULATOR's Class Diagram__\n
 
   namespace  {
-    class ExpressionTree.CreateExpressionTree {
+    class CreateExpressionTree {
     }
   }
   
 
   namespace  {
-    class Expression.ExpressionMain {
+    class ExpressionMain {
     }
   }
   
 
   namespace  {
-    class ExpressionTree.ExpressionNode {
+    class ExpressionNode {
     }
   }
   
 
   namespace  {
-    class Expression.ExpressionParse {
+    class ExpressionParse {
     }
   }
   
 
   namespace  {
-    class Expression.ExpressionSolution {
+    class ExpressionSolution {
     }
   }
   
 
   namespace  {
-    class Validater.ExpressionTreeValidation {
+    class ExpressionTreeValidation {
     }
   }
   
 
   namespace  {
-    class Operater.Operator {
+    class Operator {
     }
   }
   
 
   namespace  {
-    class Operater.Precedence {
+    class Precedence {
     }
   }
   
 
   namespace  {
-    class Operater.SineOperands {
+    class SineOperands {
     }
   }
   
 
   namespace  {
-    class ExpressionTree.Tokenizer {
+    class Tokenizer {
     }
   }
   
 
-  ExpressionTree.ExpressionNode o-- ExpressionTree.ExpressionNode : left
-  ExpressionTree.ExpressionNode o-- ExpressionTree.ExpressionNode : right
-  Validater.ExpressionTreeValidation o-- ExpressionTree.ExpressionNode : ExpressionRoot
-  ExpressionTree.Tokenizer o-- Operater.Precedence : precedence
+  ExpressionNode o-- ExpressionNode : left
+  ExpressionNode o-- ExpressionNode : right
+  ExpressionTreeValidation o-- ExpressionNode : ExpressionRoot
+  Tokenizer o-- Precedence : precedence
 
 
 right footer
